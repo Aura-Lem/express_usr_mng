@@ -40,7 +40,18 @@ jobs:
     # - name: Run newman tests
     #   run: npm run test
 
-# 2nd solution with concurrently
+# 2nd solution with concurrently but problems with closing GitHub actions
 
-    - name: Run API server and tests
-      run: npm run test:api
+    # - name: Run API server and tests
+    #   run: npm run test:api
+
+# 3rd solution
+
+    - name: Start API server in background
+      run:  nohup npm run dev &
+     
+    - name: Wait for API to be ready
+      run: npx wait-on http://localhost:3011
+ 
+    - name: Run newman tests
+      run: npm run api 
