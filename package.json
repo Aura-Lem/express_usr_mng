@@ -4,7 +4,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "node --watch .",
-    "test": "newman run postman_express_usr_mng.json"
+    "test": "newman run postman_express_usr_mng.json",
+    "test:api": "concurrently -k \"npm run dev\" \"wait-on http://localhost:3011/ && npm run test\""
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,8 @@
   "type": "commonjs",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "concurrently": "^9.2.0",
+    "express": "^5.1.0",
+    "wait-on": "^8.0.3"
   }
 }

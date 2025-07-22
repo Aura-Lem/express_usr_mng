@@ -31,10 +31,16 @@ jobs:
     - name: Install libs
       run: npm i
 
-    - name: Run API server
-      run: |
-        nohup npm run dev > server.log 2>&1 &
-        sleep 10
+# 1st solution
+    # - name: Run API server
+    #   run: |
+    #     nohup npm run dev > server.log 2>&1 &
+    #     sleep 10
 
-    - name: Run newman tests
-      run: npm run test
+    # - name: Run newman tests
+    #   run: npm run test
+
+# 2nd solution with concurrently
+
+    - name: Run API server and tests
+      run: npm run test:api
