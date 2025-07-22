@@ -28,5 +28,8 @@ jobs:
     - name: Install newman
       run: npm i -g newman
 
+    - name: Run API server
+      run: npm run dev
+
     - name: Run newman tests
       run: npm run test

@@ -15,7 +15,7 @@ app.use(express.json());
 
 //http://localhost:3011/
 app.get('/', (req, res) => {
-    res.status(200).json('Hello My World!');
+    res.status(200).json('Hello World!');
 })
 
 app.get('/users', (req, res) => {

@@ -29,7 +29,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'Request properties 'userName', 'email' and 'password' are mandatory.'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
 											"});\r",
 											""
 										],
@@ -78,7 +78,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'Request properties 'userName', 'email' and 'password' are mandatory.'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
 											"});\r",
 											""
 										],
@@ -127,7 +127,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'Request properties 'userName', 'email' and 'password' are mandatory.'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"Request properties 'userName', 'email' and 'password' are mandatory.\");\r",
 											"});\r",
 											""
 										],
@@ -175,8 +175,8 @@
 											"    pm.expect(pm.response.responseTime).to.be.below(600);\r",
 											"});\r",
 											"\r",
-											"pm.test(\"Body contains text 'Name already exist'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Name already exist\");\r",
+											"pm.test(\"Body contains text 'User name already exist'\", function () {\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"User name already exist\");\r",
 											"});\r",
 											""
 										],
@@ -190,7 +190,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas1\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"Slaptazodis125**\"\r\n}",
+									"raw": "{\r\n\"userName\": \"Vardas2\",\r\n\"email\": \"user4936@gmail.com\",\r\n\"password\": \"Slaptazodis125**\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -225,7 +225,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'User name must be without spaces'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"User name must be without spaces\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"User name must be without spaces\");\r",
 											"});\r",
 											""
 										],
@@ -274,7 +274,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'Invalid email!'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Invalid email!\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"Invalid email!\");\r",
 											"});\r",
 											""
 										],
@@ -288,7 +288,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"user4gmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"user4gmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -323,7 +323,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'Invalid email!'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Invalid email!\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"Invalid email!\");\r",
 											"});\r",
 											""
 										],
@@ -337,7 +337,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"user4@gmailcom\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"user456329852@gmailcom\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -372,7 +372,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
 											"});\r",
 											""
 										],
@@ -386,7 +386,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"user14@gmail.com\",\r\n\"password\": \"Sl12*\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Sl12*\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -421,7 +421,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
 											"});\r",
 											""
 										],
@@ -435,7 +435,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"user114@gmail.com\",\r\n\"password\": \"slaptazodis125\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"slaptazodis125\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -470,7 +470,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
 											"});\r",
 											""
 										],
@@ -484,7 +484,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"Slaptazodis\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -519,7 +519,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'Password must be at lest 8 characters long and include letters, numbers and special char.'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"Password must be at lest 8 characters long and include letters, numbers and special char.\");\r",
 											"});\r",
 											""
 										],
@@ -533,7 +533,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas4\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -567,7 +567,7 @@
 									");\r",
 									"\r",
 									"function saveToColectionVariables() {\r",
-									"   // pm.collectionVariables.set(\"newUserId\", pm.response.json().user.id);\r",
+									"    pm.collectionVariables.set(\"newUserId\", pm.response.json().user.id);\r",
 									"    pm.collectionVariables.set(\"newUserName\", JSON.parse(pm.request.body.raw).userName);\r",
 									"    pm.collectionVariables.set(\"newUserEmail\", JSON.parse(pm.request.body.raw).email);\r",
 									"    pm.collectionVariables.set(\"newUserPassword\", JSON.parse(pm.request.body.raw).password);\r",
@@ -601,7 +601,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"userName\": \"Vardas254\",\r\n\"email\": \"user55584@gmail.com\",\r\n\"password\": \"Slaptazodis125**\"\r\n}",
+							"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis125**\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -627,22 +627,16 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// function getUserDetails() {\r",
-									"//     //return pm.collectionVariables.get(\"newBookingDetails\");\r",
-									"//     return JSON.parse(pm.collectionVariables.get(\"newUserDetails\"));\r",
-									"// }\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
 									"\r",
-									"// pm.test(\"Body message 'User created'\", function () {\r",
-									"//     pm.expect(pm.response.text()).to.include(\"User created\");\r",
-									"// });\r",
-									"\r",
-									"// pm.test(\"Check response body\", function() {\r",
-									"//     const userDetails = getUserDetails();\r",
-									"\r",
-									"//     pm.expect(pm.response.json().userName).to.equal(userDetails.user.userName);\r",
-									"//     pm.expect(pm.response.json().email).to.equal(userDetails.user.email);\r",
-									"//     pm.expect(pm.response.json().password).to.equal(userDetails.user.password);\r",
-									"// });"
+									"pm.test(\"Body message'User details'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserId\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserName\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserEmail\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserPassword\"));\r",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -853,7 +847,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas1\",\r\n\"email\": \"user294@gmail.com\",\r\n\"password\": \"Slaptazodis125**\"\r\n}",
+									"raw": "{\r\n\"userName\": \"Vardas2\",\r\n\"email\": \"user294@gmail.com\",\r\n\"password\": \"Slaptazodis125**\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -953,7 +947,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas47\",\r\n\"email\": \"user4gmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"user4566hjkkjgmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1003,7 +997,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas84\",\r\n\"email\": \"user4@gmailcom\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"user425636asedew@gmailcom\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1053,7 +1047,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas374\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"Sl12*\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Sl12*\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1103,7 +1097,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas954\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"slaptazodis125\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"slaptazodis125\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1153,7 +1147,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas544\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"Slaptazodis\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1203,7 +1197,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n\"userName\": \"Vardas874\",\r\n\"email\": \"user4@gmail.com\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
+									"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis125\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1267,7 +1261,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\"userName\": \"Vardas2369\",\r\n\"email\": \"vardas1651@gmail.com\",\r\n\"password\": \"Slaptazodis155**\"\r\n}",
+							"raw": "{\r\n\"userName\": \"{{$randomUserName}}\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"password\": \"Slaptazodis155**\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1298,7 +1292,12 @@
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									""
+									"pm.test(\"Body message'User details'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserId\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserName\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserEmail\"));\r",
+									"    pm.expect(pm.response.text()).to.include(pm.collectionVariables.get(\"newUserPassword\"));\r",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1309,13 +1308,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/users/1",
+							"raw": "{{baseUrl}}/users/{{newUserId}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"users",
-								"1"
+								"{{newUserId}}"
 							]
 						}
 					},
@@ -1345,7 +1344,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Body contains text 'User not found'\", function () {\r",
-											"    pm.expect(pm.response.text()).to.include(\"User not found\");\r",
+											"    pm.expect(pm.response.json().message).to.equal(\"User not found\");\r",
 											"});\r",
 											""
 										],
@@ -1468,8 +1467,11 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Body message'List of users'\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"List of users\");\r",
+							"pm.test(\"Body message'User details'\", function () {\r",
+							"    pm.expect(pm.response.json().message).to.equal(pm.collectionVariables.get(\"newUserId\"));\r",
+							"    pm.expect(pm.response.json().message).to.equal(pm.collectionVariables.get(\"newUserName\"));\r",
+							"    pm.expect(pm.response.json().message).to.equal(pm.collectionVariables.get(\"newUserEmail\"));\r",
+							"    pm.expect(pm.response.json().message).to.equal(pm.collectionVariables.get(\"newUserPassword\"));\r",
 							"});"
 						],
 						"type": "text/javascript",
@@ -1503,8 +1505,11 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Body message'User details by id:1'\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"User details by id:1\");\r",
+							"pm.test(\"Body message'User details'\", function () {\r",
+							"    pm.expect(pm.response.json().message).to.equal(pm.collectionVariables.get(\"newUserId\"));\r",
+							"    pm.expect(pm.response.json().message).to.equal(pm.collectionVariables.get(\"newUserName\"));\r",
+							"    pm.expect(pm.response.json().message).to.equal(pm.collectionVariables.get(\"newUserEmail\"));\r",
+							"    pm.expect(pm.response.json().message).to.equal(pm.collectionVariables.get(\"newUserPassword\"));\r",
 							"});"
 						],
 						"type": "text/javascript",
@@ -1516,13 +1521,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/users/4",
+					"raw": "{{baseUrl}}/users/{{newUserId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"users",
-						"4"
+						"{{newUserId}}"
 					]
 				}
 			},
