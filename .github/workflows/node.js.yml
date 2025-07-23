@@ -47,11 +47,16 @@ jobs:
 
 # 3rd solution
 
-    - name: Start API server in background
-      run:  nohup npm run dev &
+    # - name: Start API server in background
+    #   run:  nohup npm run dev &
      
-    - name: Wait for API to be ready
-      run: npx wait-on http://localhost:3011
+    # - name: Wait for API to be ready
+    #   run: npx wait-on http://localhost:3011
  
-    - name: Run newman tests
-      run: npm run test 
+    # - name: Run newman tests
+    #   run: npm run test 
+
+# 4th solution
+
+    - name: Start API server and tests
+      run:  npm run tst:api
